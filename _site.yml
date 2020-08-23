@@ -3,22 +3,16 @@ output_dir: "docs"
 navbar:
   title: "Math & fun"
   left:
-  - text: "Home"
-    href: index.html
-  - text: "2º Bach"
-    href: 2bach-ccss.html
-    menu:
-        - text: "Heading 1"
-        - text: "Page A"
-            href: index.html
-        - text: "Page B"
-            href: index.html
+    - text: "2º Bach"
+      #icon: fad fa-lambda
+      menu:
+        - text: "Matemáticas II"
+        - text: "Apuntes"
+          href: 2bach-ccss.html
         - text: "---------"
-        - text: "Heading 2"
-        - text: "Page C"
-            href: index.html
-        - text: "Page D"
-            href: index.html
+        - text: "Matemáticas CCSS"
+        - text: "Apuntes"
+          href: 2bach-ccss.html
 output:
   html_document:
-    theme: cosmo
+    theme: flatly #sandstone
