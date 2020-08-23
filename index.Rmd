@@ -1,7 +1,13 @@
 ---
 title: "Welcome " 
-output: html_document
+output: 
+  html_document:
+    includes:
+      in_header: "favicon.html" 
+favicon: "favicon.png"
 ---
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
