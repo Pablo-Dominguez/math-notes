@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>2bach-ccss</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Cars</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="speed-and-distance.html">Speed and Distance</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">2bach-ccss</h1>
+
+</div>
+
+
+<div id="apuntes-álgebra" class="section level1">
+<h1>Apuntes Álgebra</h1>
+<div id="rango-de-una-matriz" class="section level2">
+<h2>Rango de una matriz</h2>
+<p>Se define el <strong>rango</strong> de una matriz como el máximo número de columnas o filas linealmente independientes de la matriz. Si tenemos una matriz <span class="math inline">\(A\)</span> de dimensiones <span class="math inline">\(n\times m\)</span>, entonces el rango de dicha matriz es como máximo el valor mínimo entre <span class="math inline">\(n\)</span> y <span class="math inline">\(m\)</span>. Es decir, en una matriz <span class="math inline">\(2\times 3\)</span>, el rango no puede ser mayor que 2.</p>
+<p>Para calcular el rango de una matriz, podemos usar o bien el método de Gauss, o bien determinantes.</p>
+<div id="usando-el-método-de-gauss" class="section level3">
+<h3>Usando el método de Gauss</h3>
+<p>En una matriz escalonada, que es la que se obtiene al terminar de aplicar el método de Gauss sobre una matriz, los pivotes son aquellos elementos que son distinto de cero y además tienen por debajo todos los elementos cero. Ej:</p>
+<p><img src="static/images/matricesescalonadas.png" /></p>
+</div>
+<div id="usando-determinantes" class="section level3">
+<h3>Usando determinantes</h3>
+<p>Además de con el método de Gauss, podemos usar determinantes para calcular el rango de la matriz (aunque la matriz no sea cuadrada). El rango de la matriz coincidirá con el tamaño del mayor determinante no nulo que podamos encontrar dentro de la matriz. El problema principal de este método es que requiere de probar todas las posibles combinaciones de determinantes para poder asegurar el valor del rango de la matriz.</p>
+</div>
+</div>
+<div id="teorema-de-rouché-frobenius" class="section level2">
+<h2>Teorema de Rouché-Frobenius</h2>
+<p>El teorema de Rouché, o teormea de Rouché-Frobenius nos da qué casos se pueden dar en un sistema de ecuaciones, y cómo identificar cada caso. Supongamos que tenemos un sistema de ecuaciones de la forma <span class="math inline">\(Ax = b\)</span>, que puede expresarse como <span class="math inline">\(\left( A \; \vert \; b \right)\)</span>, donde a <span class="math inline">\(A\)</span> la llamamos <strong>matriz de coeficientes</strong> y a <span class="math inline">\(\left( A \; \vert \; b \right)\)</span> la llamamos <strong>matriz ampliada</strong> del sistema de ecuaciones. Pues bien:</p>
+<ul>
+<li>Si <span class="math inline">\(rg(A) = rg \left( A \; \vert \; b \right) =\)</span> nº de incógnitas del sistema (<span class="math inline">\(x,y,z...\)</span>), el sistema tiene una <strong>única solución</strong>. Se dice entonces que el sistema es <strong>compatible determinado</strong>.</li>
+<li>Si <span class="math inline">\(rg(A) = rg \left( A \; \vert \; b \right) &lt;\)</span> nº de incógnitas del sistema (<span class="math inline">\(x,y,z...\)</span>), el sistema tiene <strong>infinitas soluciones</strong>. Se dice entonces que el sistema es <strong>compatible indeterminado</strong>. Esta situación la podemos observar cuando al aplicar el método de Gauss sobre el sistema de ecuaciones, nos queda una fila de ceros en la matriz ampliada.</li>
+<li>Si <span class="math inline">\(rg(A) \neq rg \left( A \; \vert \; b \right)\)</span>, el sistema <strong>no tiene solución</strong>. Se dice entonces que el sistema es <strong>incompatible</strong>. Esta situación la podemos observar cuando al aplicar el método de Gauss sobre el sistema de ecuaciones, nos queda una ecuación de la forma <span class="math inline">\(0 = 1\)</span>.</li>
+</ul>
+</div>
+<div id="regla-de-cramer" class="section level2">
+<h2>Regla de Cramer</h2>
+<p>Cuando un sistema <span class="math inline">\(\left( A \; \vert \; b \right)\)</span> tiene una única solución (compatible determinado), es decir, <span class="math inline">\(\vert A \vert \neq 0\)</span>, las soluciones de dicho sistema son de la siguiente forma:</p>
+<ul>
+<li>Si <span class="math inline">\(A = \left( a_1 \, a_2\, a_3 \right)\)</span>, siendo <span class="math inline">\(a_1 \, a_2\, a_3\)</span> las columnas de <span class="math inline">\(A\)</span>, entonces:</li>
+</ul>
+<p><span class="math display">\[\begin{gather*}
+
+x = \frac{\vert \left( b \, a_2 \, a_3\right) \vert}{\vert A \vert} \\\\
+y = \frac{\vert \left( a_1 \, b \; a_3\right) \vert}{\vert A \vert} \\\\
+z = \frac{\vert \left( a_1 \, a_2 \; b\right) \vert}{\vert A \vert}
+
+\end{gather*}\]</span></p>
+<p>En general la regla de Cramer nos conviene aplicarla cuando en la matriz <span class="math inline">\(A\)</span> aparezca algún parámetro (<span class="math inline">\(m, k, ...\)</span>).</p>
+</div>
+<div id="método-de-gauss" class="section level2">
+<h2>Método de Gauss</h2>
+<p>El método de Gauss nos permite calcular siempre las soluciones de un sistema de ecuaciones, independientemente de si el sistema es compatible determinado, compatible indeterminado o incompatible. Las operaciones que se pueden realizar en este método son:</p>
+<ul>
+<li>Sumar (o restar) dos filas. Esta operación no tiene ningún impacto sobre el determinante de la matriz.</li>
+<li>Multiplicar una fila por un número distinto de cero. Esta operación nos multiplicará el determinante por dicho número.</li>
+<li>Intercambiar filas de orden. Esta operación cambia el signo del determinante.</li>
+</ul>
+<p>El propio método de Gauss hemos de aplicarlo siempre de forma escalonada, de manera que:</p>
+<ol style="list-style-type: decimal">
+<li>En el elemento en la posicion <span class="math inline">\((1,1)\)</span> intentamos situar un número distinto de cero. Si no lo hay al principio intercambiaremos filas de orden hasta que lo haya.</li>
+<li>A través de las operaciones del método de Gauss, hacemos ceros sobre los números que estén situados por debajo del <span class="math inline">\((1,1)\)</span>.</li>
+<li>Continuamos con el elemento siguiente en la diagonal principal.</li>
+</ol>
+<p>Es importante saber qué impacto tienen las operaciones del método de Gauss sobre el determinante de una matriz porque en ciertas ocasiones es más sencillo calcular el determinante haciendo pocas operaciones de Gauss que de otra manera.</p>
+</div>
+<div id="inversa-de-una-matriz" class="section level2">
+<h2>Inversa de una matriz</h2>
+<p>Únicamente tendrán inversa, denotada por <span class="math inline">\(A^{-1}\)</span> aquellas matrices que sean cuadradas y además su determinante no sea nulo. La matriz inversa es aquella que cumple que <span class="math inline">\(A^{-1}A = AA^{-1} = I\)</span>. Para calcular la inversa de una matriz disponemos de dos métodos:</p>
+<div id="a-través-del-método-de-gauss-jordan" class="section level3">
+<h3>A través del método de Gauss-Jordan</h3>
+<p>El método de Gauss simple acaba una vez hayamos recorrido todos los elementos de la diagonal y hecho ceros por debajo de estos. No obstante, existe un método que extiende al anterior conocido como método de Gauss-Jordan en el cuál además de hacer ceros por debajo de la diagonal, haremos ceros también por encima, y una vez únicamente tengamos la diagonal, dividiremos cada fila por el elemento de la diagonal de esa fila.</p>
+<p>Así pues, el cálculo de la inversa se reduce a aplicar Gauss-Jordan sobre el siguiente sistema:</p>
+<p><span class="math display">\[ \left( A \, \vert \,  I\right) \stackrel{G-J}{\longrightarrow} \left( I \, \vert \,  A^{-1}\right) \]</span></p>
+<p>Donde <span class="math inline">\(I\)</span> denota la matriz identidad.</p>
+</div>
+<div id="a-través-de-la-matriz-adjunta" class="section level3">
+<h3>A través de la matriz adjunta</h3>
+<p>Dada una matriz <span class="math inline">\(A\)</span>, se define su <strong>matriz adjunta</strong> como aquella donde sustituimos cada elemento de la matriz por su adjunto, definido de la siguiente manera:</p>
+<p>Si <span class="math inline">\(A = (a_{ij})\)</span>, entonces para cada elemento <span class="math inline">\(a_{ij}\)</span> de la matriz definimos su adjunto como <span class="math inline">\((-1)^{i+j}\cdot \vert A_{ij} \vert\)</span>, donde <span class="math inline">\(A_{ij}\)</span> denota la matriz resultante de eliminar la fila <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span> de la matriz <span class="math inline">\(A\)</span>.</p>
+<p>Así pues, la inversa de una matriz se puede calcular como <span class="math inline">\(A^{-1} = \frac{(A^{adj})^t}{\vert A \vert}\)</span></p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
