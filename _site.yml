@@ -1,5 +1,6 @@
 name: "math"
 output_dir: "docs"
+favicon: favicon.png
 navbar:
   title: "Math & fun"
   left:
