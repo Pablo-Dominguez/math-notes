@@ -1,12 +1,24 @@
-name: "cars"
+name: "math"
 output_dir: "docs"
 navbar:
-  title: "Cars"
+  title: "Math & fun"
   left:
   - text: "Home"
     href: index.html
-  - text: "Speed and Distance"
+  - text: "2º Bach"
     href: 2bach-ccss.html
+    menu:
+        - text: "Heading 1"
+        - text: "Page A"
+            href: index.html
+        - text: "Page B"
+            href: index.html
+        - text: "---------"
+        - text: "Heading 2"
+        - text: "Page C"
+            href: index.html
+        - text: "Page D"
+            href: index.html
 output:
   html_document:
     theme: cosmo
