@@ -10,7 +10,7 @@ output:
     toc: true
     toc_depth: 2
     includes:
-      in_header: "favicon.html" 
+      in_header: "layouts/partials/favicon.html" 
 ---
 
 # Álgebra
