@@ -93,3 +93,76 @@ Dada una matriz $A$, se define su **matriz adjunta** como aquella donde sustitui
 Si $A = (a_{ij})$, entonces para cada elemento $a_{ij}$ de la matriz definimos su adjunto como $(-1)^{i+j}\cdot \vert A_{ij} \vert$, donde $A_{ij}$ denota la matriz resultante de eliminar la fila $i$ y la columna $j$ de la matriz $A$.
 
 Así pues, la inversa de una matriz se puede calcular como $A^{-1} = \frac{(A^{adj})^t}{\vert A \vert}$
+
+## Programación lineal
+
+En esta última sección, el objetivo es aprender a encontrar máximos y mínimos sobre una **función objetivo** en una región delimitada. Dicha región, vendrá dada por una serie de **inecuaciones**,que son simplemente ecuaciones donde en lugar de tener un signo de $=$ tendremos desigualdades del tipo $\leq$.
+
+* En primer lugar, trazaremos las rectas que cada inecuación representa.
+* Una vez trazadas dichas rectas, plantearemos una serie de sistemas de ecuaciones, eligiendo las ecuaciones dos a dos para hallar los puntos de corte de cada par de rectas.
+* Por último, evaluamos la función objetivo en los puntos de corte. El máximo (y el mínimo) se tendrá siempre en uno de estos puntos.
+
+### Un ejemplo práctico
+
+Considérese la región del plano definida de la siguiente forma:
+
+$$ S = \{(x,y) \in \mathbb{R}^2 : x+2y \geq 4; x+2y \leq 12; x \leq 4; -x+2y \leq 12 \}$$
+
+En primer lugar, planteamos las ecuaciones, y damos valores para trazar las rectas:
+
+$$\begin{gather}
+x+2y = 4\\
+x+2y = 12\\ 
+x = 4\\
+-x+2y =12 
+\end{gather}$$
+
+Una vez dibujada cada una de las rectas, deberemos dar un punto dentro de la inecuación para saber a qué región del plano delimita la inecuación. Es importante que el punto **no** esté en la recta. Por ejemplo, para la inecuación $x+2y \geq 4$ sabemos que si sustituimos por ejemplo el punto $(0,0)$, tenemos que $0+2\times 0 = 0$ que no es menor que $4$, por tanto la mitad a la que delimita esta inecuación es la superior. Cuando hayamos hecho eso con todas, podremos delimitar la región $S$, como se muestra a continuación.
+
+
+![](static/images/2bach-css/animatedGIF.gif)
+
+Para encontrar los puntos de corte del recinto, tendremos que plantear los sistemas de ecuaciones dos a dos. Por ejemplo, para calcular el punto $D$, tendríamos que plantear el siguiente sistema:
+
+$$\begin{cases}
+x+2y=12 \\
+x = 4
+\end{cases}
+$$
+
+Que puede resolverse directamente por sustitución y nos daría el punto $D = (4,4)$. Una vez calculados el resto de vértices, si nos dan una función objetivo como por ejemplo $f(x,y) = 3x-y$, y nos piden que demos el valor máximo (o mínimo) que alcanza esa función en el recinto $S$, únicamente tendremos que calcular el valor de $f$ en $A, B, C$ y $D$ y ver los valores que obtenemos para cada punto.
+
+
+# Análisis
+
+## Límites y continuidad
+
+El concepto de límite matemático suele ser un tema que, en el mejor de los casos, causa cierta confusión la primera vez que se presenta a la hora de estudiarlo. Para poder entenderlo, resulta esencial entender bien el concepto de infinito. Del mismo modo que resulta sencillo asumir que existen infinitos números, debemos hacer un esfuerzo por entender que podemos manejar el infinito como un objeto matemático del mismo modo que si fuese un número, con algunas excepciones a las que llamaremos **indeterminaciones**. Las principales indeterminaciones son las siguientes:
+
+* $\infty - \infty$ 
+
+* $\frac{\infty}{\infty}$
+
+* $\frac{0}{0}$
+
+* $0\cdot \infty$
+* $0^0$
+* $\infty^0$
+* $1^\infty$
+
+Se denominan indeterminaciones no porque *no valgan nada* o porque *no se sepa*, si no porque a priori su valor no está determinado, y si haciendo cálculos obtenemos alguna de ellas, deberemos desandar algunos pasos y reenfocar los cálculos para obtener el valor real de lo que estábamos calculando. ¡Ojo! El valor, puede salir $\infty$.
+
+### Continuidad
+
+Decimos que una función $f(x)$ es contínua en un punto $x=a$ cuando se tienen las siguientes tres condiciones:
+
+1. Existe el valor de la función en el punto, es decir, existe $f(a)$. Esto no pasa por ejemplo si $f(x) = \sqrt{x}$ y $a = -1$.
+2. Que existan los límites laterales de la función en dicho punto y coincidan.
+3. Que los valores de los límites laterales sean igual al valor de la función en ese punto.
+
+Si no se tiene $(3)$, tenemos una discontinuidad **evitable**. Por otra parte, si el problema lo tenemos en $(2)$, pueden darse tres situaciones distintas:
+
+1. Si ambos límites laterales existen (es decir, no valen $\pm \infty$), pero no coinciden, tenemos una discontinuidad **de salto finito**.
+2. Si uno de los dos límites laterales vale $\pm \infty$, la discontinuidad se llama **de salto infinito**.
+3. Si ambos valen $\pm \infty$, la discontinuidad es del tipo **asintótica**.
+
