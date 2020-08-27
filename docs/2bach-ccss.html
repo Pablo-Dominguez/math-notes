@@ -659,6 +659,29 @@ x = 4
 <li>Si ambos valen <span class="math inline">\(\pm \infty\)</span>, la discontinuidad es del tipo <strong>asintótica</strong>.</li>
 </ol>
 </div>
+<div id="asíntotas" class="section level3">
+<h3>Asíntotas</h3>
+<p>Decimos que una función tiene una asíntota cuando existe una recta a la que la función se aproxima contínuamente. Existen dos tipos de asíntotas, en función de si las rectas son verticales u horizontales, a las que llamaremos precisamente por este motivo <strong>asíntotas verticuales</strong> y <strong>asíntotas horizontales</strong>. Las estudiaremos de la siguiente forma:</p>
+<ul>
+<li>Asíntotas horizontales: Resultan las más sencillas de calcular, únicamente deberemos calcular los límites en <span class="math inline">\(+\infty\)</span> y en <span class="math inline">\(-\infty\)</span> de la funcion, es decir, <span class="math inline">\(\lim_{x\to+\infty} f(x)\)</span> y <span class="math inline">\(\lim_{x\to-\infty} f(x)\)</span>. Diremos que la función tiene una asíntota horizontal en <span class="math inline">\(y=a\)</span> si <span class="math inline">\(\lim_{x\to\infty} f(x)=a\)</span>. Es importante destacar que estos límites no tienen por qué coincidir, y que la función puede tener una asíntota en un lado y no tenerla en el otro, o incluso tenerla en ambos lados y que no sean iguales. Veamos un ejemplo:</li>
+</ul>
+<p>Consideremos la función <span class="math inline">\(f(x) = \frac{x}{\vert x\vert+1}\)</span>, entonces para calcular las asíntotas verticales haremos lo siguiente:</p>
+<p><span class="math display">\[\begin{gather}
+\lim_{x\to+\infty} f(x) = \lim_{x\to+\infty} \frac{x}{\vert x\vert+1} =  \lim_{x\to+\infty} \frac{\frac{x}{x}}{\frac{\vert x\vert}{ x}+\frac{1}{ x}} = \frac{1}{1+\frac{1}{\infty}} = 1 \\
+\lim_{x\to-\infty} f(x) = \lim_{x\to-\infty} \frac{x}{\vert x\vert+1} =  \lim_{x\to-\infty} \frac{\frac{x}{x}}{\frac{\vert x\vert}{ x}+\frac{1}{ x}} = \frac{1}{-1+\frac{1}{\infty}} = -1
+\end{gather}
+\]</span></p>
+<p>Por lo que <span class="math inline">\(f(x)\)</span> tiene dos asíntotas verticales, una en <span class="math inline">\(y=1\)</span> y otra distinta en <span class="math inline">\(y=-1\)</span>.</p>
+<p>*Asíntotas verticales: Una función podrá tener asíntotas verticales en aquellos puntos donde se anule su denominador (si lo tuviera). Una vez localicemos esos puntos, tenemos que calcular el límite de la función hacia ese punto para ver si efectivamente tiene una asíntota. Veamos un ejemplo:</p>
+<p><span class="math display">\[\text{Sea } f(x)=\frac{x^2 + 6x +5}{x^2 +4x +3} \\
+x^2 +4x +3 = (x+1)(x+3); \; x=-1; \; x = -3
+\]</span> Calculamos los límites en esos puntos para ver si la función tiene asíntotas verticales:</p>
+<p><span class="math display">\[\begin{gather}
+\lim_{x\to -3}\frac{x^2 + 6x +5}{x^2 +4x +3} = \lim_{x\to -3}\frac{(x+1)(x+5)}{(x+1)(x+3)} = \lim_{x\to -3}\frac{x+5}{x+3} = \frac{2}{0} = \infty\\
+\lim_{x\to -1}\frac{x^2 + 6x +5}{x^2 +4x +3} = \lim_{x\to -1}\frac{(x+1)(x+5)}{(x+1)(x+3)} = \lim_{x\to -1}\frac{x+5}{x+3} = \frac{4}{2} = 2
+\end{gather}\]</span></p>
+<p>Por tanto la función tiene una asíntota vertical en <span class="math inline">\(x=-3\)</span>.</p>
+</div>
 </div>
 </div>
 

@@ -1,5 +1,5 @@
 # Math notes
-Notes for my math clases
+Notes for my math clases that can be found [here](https://pablo-dominguez.github.io/math-notes/)
 
 - [Math notes](#math-notes)
   * [Git cheatsheet](#git-cheatsheet)
