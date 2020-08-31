@@ -195,3 +195,41 @@ $$\begin{gather}
 \end{gather}$$
 
 Por tanto la función tiene una asíntota vertical en $x=-3$.
+
+
+## Aplicaciones de las derivadas
+
+Una vez podamos manejar con soltura las reglas de derivación, para lo cual nos apoyaremos principalmente en una tabla de derivadas, podemos ver dos aplicaciones directas de los conceptos de derivada.
+
+### Cálculo de la recta tangente 
+
+Si tenemos una función $f(x)$, su derivada, que denotaremos por $f'(x)$ es aquella otra función que a cada $x$ le asocia el valor de la **pendiente de la recta tangente** a $x$ de la curva de $f(x)$. Por tanto, si queremos calcular la recta tangente a un punto, podemos proceder del siguiente modo:
+
+Supongamos que tenemos la función $f(x) = 2x^3-3x^2+2x$ y queremos calcular su recta tangente en $x=1$. La recta tangente será una ecuación de la forma $y = mx+n$ donde $m$ representa la pendiente de la recta, y $n$ es el punto de corte con el eje vertical. Pues bien:
+
+1. Calculamos un punto por donde pasa la recta. Como queremos que sea tangente a $f(x)$ en $x=1$, entonces la recta tiene que pasar por el punto $(x,y) = (1,f(1)) = (1,1)$
+2. Derivamos la función para calcular el valor de la pendiente de la recta tangente en ese punto. Sabemos que $f'(x) = 6x^2-6x+2$, por tanto $m = f'(1) = 2$.
+3. Despejamos el valor de la $n$ ahora que ya sabemos $x,y$ y $m$. $n = y-mx = 1-2*1 = -1$
+4. La ecuación de la recta tangente nos queda $y = 2x-1$.
+
+![](static/images/2bach-css/rect.gif)
+
+### Monotonía
+
+El objetivo de este apartado es saber calcular tanto el **crecimiento y decrecimiento** de una función, como sus **extremos** (máximos y mínimos).
+
+1. En primer lugar, necesitamos localizar una serie de puntos donde la función cambia su comportamiento. Estos puntos serán de dos tipos.
+   1. Aquellos puntos donde la función no sea contínua.
+   2. Aquellos puntos donde la derivada de la función se anule. Cabe destacar que nunca pueden coincidir con los anteriores, porque si la función no es contínua en un punto, no puede ser derivable en ese punto.
+2. Una vez hayamos localizado esos puntos, habremos de estudiar el signo de la derivada a izquierda y derecha de esos puntos. 
+   1. Allí donde la derivada sea positiva, la función será creciente, y donde sea negativa, la función será decreciente.
+   2. Allí donde la derivada se anule y pase de creciente a decreciente, la función tendrá un **máximo**. Al mismo tiempo, si la derivada se anula y la función pasa de decreciente a creciente, la función tendrá un **mínimo**. Observar que puede darse el caso donde la derivada se anule, pero no cambie el su signo al pasar por ese punto. A esto se le conoce como **punto de inflexión**.
+   
+Veamos un ejemplo práctico: 
+
+Sea $f(x) = x^2-2x+2$. Como esta función es un polinomio, y sabemos que los polinomios son siempre contínuos, vamos a calcular los puntos donde su derivada se anule. Como $f'(x) = 2x-2$ igualamos $2x-2 = 0$ y por tanto $x = 1$.
+
+Para saber el signo de la derivada, damos un valor a izquierda y derecha de ese punto, por ejemplo $f'(0) = -2$ y $f'(2) = 2$. Por tanto la derivada es negativa a la izquierda de $x=1$ y positiva a la derecha de $x=1$ y como en ese punto se anula, la función $f(x)$ tiene un mínimo en ese punto que vale $f(1) = 1$. 
+
+Al mismo tiempo, podemos decir que $f(x)$ es **decreciente** en $(-\infty, 1)$ y es **creciente** en $(1,+\infty)$.
+  
