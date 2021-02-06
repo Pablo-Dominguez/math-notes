@@ -1,0 +1,85 @@
+---
+title: "Apuntes Matemáticas II"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, '2bach.html'))})
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    includes:
+      in_header: "layouts/partials/favicon.html" 
+---
+
+# Álgebra
+
+En este bloque se va a estudiar principalmente el concepto de matriz como objeto matemático. A lo largo del curso veremos dos aplicaciones directas que tienen las matrices: por un lado para resolver sistemas de ecuaciones y por otro lado como aplicación en geometría para entender la abstracción de los conceptos de recta y de plano.
+
+## Matrices
+
+* **Definición:** Las matrices, normalmente denotadas con letra mayúscula, son un simplemente una colección de números organizados en filas y columnas. 
+
+* **Definición:** Dada una matriz $A$, se define la dimensión de la matriz como el número de filas y columnas que tiene esa matríz. Así, si $A$ es una matriz con $2$ filas y $3$ columnas, decimos que su dimensión es $2\times 3$ y denotamos la matriz como $A_{2\times 3}$.
+
+Las matrices pueden tener cualquier número de filas y/o columnas, siempre que este número sea al menos $1$. Así, a continuación presentamos cuatro ejemplos de matrices:
+
+$$
+A = \begin{pmatrix}
+7 & 4 & 39
+\end{pmatrix}_{1 \times 3} \quad
+B = \begin{pmatrix}
+\frac{9}{4} \\ log(12) \\ 3.49
+\end{pmatrix}_{3 \times 1} \quad
+C = \begin{pmatrix}
+6
+\end{pmatrix}_{1 \times 1} \quad
+D = \begin{pmatrix}
+1 & 2 & 3 \\
+1 & a & 3 \\
+1 & 2 & b \\
+\end{pmatrix}_{3 \times 3}
+$$
+
+## Determinantes
+
+## Sistemas de ecuaciones lineales
+
+# Geometría analítica
+
+## Vectores en el espacio
+
+## Rectas en el espacio. Posiciones relativas de rectas.
+
+## Planos en el espacio. Posiciones relativas de rectas y planos.
+
+## Distancias, áreas y volúmenes.
+
+# Análisis
+
+## Límites de funciones
+
+## Continuidad de funciones
+
+## Derivabilidad de funciones. 
+
+## Aplicaciones de las derivadas. Optimización.
+
+## Representación de funciones.
+
+## Integrales indefinidas.
+
+## Métodos de integración.
+
+## Integrales definidas. Cálculo de áreas.
+
+# Estadística y probabilidad.
+
+## Cálculo de probabilidades.
+
+## Combinatoria.
+
+## Distribuciones discretas. La distribución binomial.
+
+## Distribuciones continuas. La distribución normal.
