@@ -41,6 +41,12 @@ D = \begin{pmatrix}
 1 & 2 & b \\
 \end{pmatrix}_{3 \times 3}
 $$
+### Tipos y propiedades de matrices
+
+Existen algunos conceptos que debemos conocer a la hora de trabajar con matrices:
+
+* Matriz cuadrada: Cuando el número de filas de una matriz coincide con el número de columnas, decimos que esta matriz es *cuadrada*. En caso contrario, decimos que es rectangular. Además, en el caso de las matrices cuadradas, en lugar de hablar de dimensión de la matriz hablamos de orden de la matriz (por ej. orden $2$ si la matriz es $2 \times 2$)
+* Cuando la matriz solamente está formada por una fila/columna, la denominamos matriz fila/matriz columna respectivamente.
 
 ## Determinantes
 
