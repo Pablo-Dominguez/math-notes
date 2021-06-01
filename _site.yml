@@ -14,9 +14,10 @@ navbar:
         - text: "Matemáticas CCSS"
         - text: "Apuntes"
           href: 2bach-ccss.html
-    - text: "2º Bach"
+    - text: "FP Superior"
       #icon: fad fa-lambda
-      - text: "Acceso FP superior"
+      menu:
+        - text: "Acceso FP superior"
         - text: "Apuntes"
           href: FP2.html
 output:
