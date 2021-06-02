@@ -1,9 +1,5 @@
 ---
 title: "Apuntes FP2"
-author: "Pablo Domínguez"
-header-includes:
-  - \usepackage{placeins}
-  - \usepackage{dcolumn}
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
