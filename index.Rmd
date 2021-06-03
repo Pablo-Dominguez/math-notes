@@ -11,7 +11,7 @@ output:
 <!-- width="100%"> </iframe> -->
 <body class='nav-closed'>
 <div id="particles-js">
-<canvas class="particles-js-canvas-el" width="1225" height="378" style="width: 100%; height: 100%;"></canvas>
+<canvas class="particles-js-canvas-el" width="1225" height="378" style="width: 100%; height: 100%;"></canvas>   
 <!-- Image by <a href="https://pixabay.com/users/Shabinh-7862477/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3206739">Shabinh</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3206739">Pixabay</a> -->
 </div>
 

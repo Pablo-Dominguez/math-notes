@@ -11,6 +11,10 @@ output:
     toc_depth: 3
     includes:
       in_header: "layouts/partials/favicon.html" 
+      
+header-includes:
+  - \usepackage{empheq}
+  - \newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
 ---
 
 
@@ -40,6 +44,22 @@ Esta regla se usa para casos de proporcionalidad directa, donde cuando dos magni
 </details>
 
 ## Análisis (funciones)
+
+### Dominio y recorrido
+
+Para estudiar el dominio y el recorrido de una función a partir de una gráfica, lo que haremos será:
+
+* Dominio: nos fijamos en el eje de abajo, y miramos la "sombra" de la gráfica.
+* Recorrido: nos fijamos en el eje vertical, y miramos la "sombra" horizontal de la gráfica.
+
+### Crecimiento y decrecimiento
+
+Para estudiar el crecimiento y el decrecimiento de una función, miraremos la gráfica siempre de izquierda a derecha, y la función crecerá en los **intervalos** donde "suba" o vaya "cuesta arriba", y decrece allí donde la función "baje".
+
+### Máximos y mínimos
+
+Una función tiene un máximo cuando pasa de creciente a decreciente (es decir, cuando tiene una montañita). Al mismo tiempo, tendrá un mínimo cuando pase de decreciente a creciente (es decir, cuando tenga un valle).
+
 
 ## Probabilidad y estadística
 
@@ -125,7 +145,16 @@ Para el bloque de estadística, nos bastará con saber calcular los estadístico
 </details>
 
 
+#### Moda y mediana
 
+Otros valores estadísticos que ocasionalmente deberemos calcular son la moda y la mediana. 
+
+* La moda es aquél valor que más se repite en una variable. Si por ejemplo $X$ toma los valores $1,2,3,3,3,4,5$, la moda será $3$ por ser este el valor que más veces se repite.
+* La mediana es aquél valor que divide el muestreo de una variable en dos conjuntos del mismo tamaño.
+
+| ![Moda, mediana y media](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Visualisation_mode_median_mean.svg/langes-220px-Visualisation_mode_median_mean.svg.png) |
+|:--:| 
+| *Moda, mediana y media* |
 
 ## Geometría
 
@@ -163,15 +192,39 @@ El teorema de Pitágoras nos dice que, para un **triángulo rectángulo**, la hi
 Así, el teorema de Pitágoras se puede enunciar como:
 
 \begin{gather*}
+\boxed{
 h^2 = c_1^2 + c_2^2
+}
 \end{gather*}
 
+### Áreas y perímetros
+
+A continuación se presentan las fórmulas para realizar estos cálculos sobre figuras planas.
+
+| Figura   |      Área     |  Perímetro | Esquema |
+|:----------:|:-------------:|:------:|:------:|
+| <br>Cuadrado |  $$lado \times lado$$ | $$ \text{Suma de todos los lados } (4\times lado)$$ |  |
+| <br>Rectángulo |  $$base \times altura$$ | $$ \text{Suma de todos los lados } $$ |  |
+| <br>Triángulo |  $$\frac{base \times altura}{2}$$ | $$ \text{Suma de todos los lados } $$ |  |
+| <br>Circunferencia |  $$\pi \times r^2$$ | $$2 \times \pi \times r$$ |  |
+
+### Volúmenes y superficies
+
+A continuación se presentan las fórmulas para realizar estos cálculos sobre figuras planas.
+
+| Figura   |      Volumen     |  Superficie | Esquema |
+|:----------:|:-------------:|:------:|:------:|
+| <br>Cubo |  $$lado \times lado \times lado$$ | $$ 6 \times lado \times lado)$$ |  |
+| <br>Prisma cuadrangular (rectángulo en 3D) |  <br><br>$\boxed{base \times altura \times profundidad}$ | <br><br>$\boxed{ 2 \times base \times altura + 2 \times base \times profundidad + 2 \times altura \times profundidad  }$ |  |
+| <br>Tetraedro |  $$\textit{Área de la base}\times altura$$ | $$ 4\times \text{área de la base} $$ |  |
+| <br>Cilidro |  $$\textit{Área de la base}\times altura $$ | $$2\times \pi \times r \times h + 2\times \pi \times r^2$$ |  |
+| <br>Esfera |  $$\frac{4}{3} \times \pi \times r^3 $$ | $$4 \times \pi \times r^2$$ |  |
 
 ## Anexo I: Exámenes trabajados.
 
 - 2021/06/01: Prueba ordinaria 2020 (ejercicios 1-4). El 4to ejercicio era de maximizar parábolas, comprobar en un futuro si hay que derivar o aplicar fórmula de extremos. 
 - 2021/06/02: Hemos finalizado la prueba de 2020, y comenzado la de Junio 2012. Procurar trabajar más las ecuaciones con ejercicios.
-
+- 2021/06/03: Hemos llegado hasta el ejercicio 3 del examen de Junio de 2012 (incluido).
 
 
 
