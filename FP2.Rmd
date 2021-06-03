@@ -7,22 +7,12 @@ knit: (function(input_file, encoding) {
  output_file=file.path(dirname(input_file), out_dir, 'FP2.html'))})
 output: 
   html_document:
+    toc: true
+    toc_depth: 3
     includes:
       in_header: "layouts/partials/favicon.html" 
 ---
 
-
-### Índice
-
-- [Álgebra (ecuaciones)](#-lgebra--ecuaciones-)
-    + [Regla de 3](#regla-de-3)
-- [Análisis (funciones)](#an-lisis--funciones-)
-- [Probabilidad y estadística](#probabilidad-y-estad-stica)
-  * [Probabilidad](#probabilidad)
-    + [Regla de Laplace](#regla-de-laplace)
-  * [Estadística](#estad-stica)
-- [Geometría](#geometr-a)
-* [Anexo I: Exámenes trabajados.](#anexo-i--ex-menes-trabajados)
 
 ## Álgebra (ecuaciones)
 
@@ -139,9 +129,48 @@ Para el bloque de estadística, nos bastará con saber calcular los estadístico
 
 ## Geometría
 
-### Anexo I: Exámenes trabajados.
+### Tipos de triángulos
+
+Todos los triángulos tienen vértices, lados y ángulos. Las dos clasificaciones principales de triángulos que podemos hacer son según sus lados, o según sus ángulos. Es importante tener en cuenta que **en todos los triángulos la suma de sus ángulos siempre es 180º**.
+
+| ![Partes de un triángulo](https://i.imgur.com/TqyZJKC.jpg) |
+|:--:| 
+| *Partes de un triángulo* |
+
+
+#### Según sus lados
+
+Encontramos tres tipos principales de triángulos:
+
+- Equilátero: Es cuando todos sus lados son iguales.
+- Isósceles: Es cuando tiene dos lados iguales y uno distinto a los otros dos.
+- Escaleno: Es cuando todos sus lados son diferentes.
+
+#### Según sus ángulos
+
+- Rectángulo: Cuando el triángulo tiene un ángulo recto (90º).
+- Acutángulo: Cuando todos sus ángulos son menores que 90º.
+- Obtusángulo: Cuando tiene un ángulo obtuso, es decir, mayor de 90º.
+
+### Teorema de Pitágoras
+
+El teorema de Pitágoras nos dice que, para un **triángulo rectángulo**, la hipotenusa al cuadrado es igual que la suma de los cuadrados de los catetos. Llamamos hipotenusa al lado mayor del triángulo, que es aquél opuesto al ángulo recto, y catetos a los otros dos lados.
+
+| ![Partes de un triángulo](https://i.imgur.com/0AMEWfT.jpg) |
+|:--:| 
+| *Nombre de los lados de un triángulo rectángulo* |
+
+Así, el teorema de Pitágoras se puede enunciar como:
+
+\begin{gather*}
+h^2 = c_1^2 + c_2^2
+\end{gather*}
+
+
+## Anexo I: Exámenes trabajados.
 
 - 2021/06/01: Prueba ordinaria 2020 (ejercicios 1-4). El 4to ejercicio era de maximizar parábolas, comprobar en un futuro si hay que derivar o aplicar fórmula de extremos. 
+- 2021/06/02: Hemos finalizado la prueba de 2020, y comenzado la de Junio 2012. Procurar trabajar más las ecuaciones con ejercicios.
 
 
 
